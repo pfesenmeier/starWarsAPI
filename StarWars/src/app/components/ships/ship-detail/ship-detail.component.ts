@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Pokemon } from 'src/app/models/Pokemon';
+import { ShipService } from 'src/app/services/ship.service';
 
 @Component({
   selector: 'app-ship-detail',
@@ -8,11 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ShipDetailComponent implements OnInit {
 
-  constructor(private _activatedRoute: ActivatedRoute, private pokemon: ) { }
+  pokemon: Pokemon;
+
+  constructor(private _activatedRoute: ActivatedRoute, private pokemonService: ShipService) { }
 
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routeData => {
       console.log(routeData);
+      this.pokemonService.getShip('zubat').subscribe((pokemon: Pokemon) => {
+        this.pokemon = pokemon;
+      console.log(pokemon);
+      })
     })
   }
 
