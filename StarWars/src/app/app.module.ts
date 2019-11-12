@@ -18,7 +18,7 @@ import { ShipService } from './services/ship.service';
 
 
 const routes = [
-  { path: 'pokemon', component: ShipDetailComponent},
+  { path: 'pokemon/:query', component: ShipDetailComponent},
   { path: '**', component: ShipIndexComponent }
 ]
 

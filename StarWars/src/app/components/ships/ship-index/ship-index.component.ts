@@ -16,6 +16,9 @@ export class ShipIndexComponent implements OnInit {
   private searchForm: FormGroup;
     
   columnNames = ['Name','Details']
+ 
+  query: any;
+  searchResult: any;
 
   dataSource: MatTableDataSource<Pokemon>;
 
@@ -24,9 +27,9 @@ export class ShipIndexComponent implements OnInit {
    }
 
   ngOnInit() {
-      this._shipService.getShips().subscribe((pokemons: Pokemon[]) => {
-        this.dataSource = new MatTableDataSource<Pokemon>(pokemons);
-        console.log(pokemons);
+      this._shipService.getShips().subscribe((pokemons: any) => {
+        this.dataSource = new MatTableDataSource<Pokemon>(pokemons.results);
+        
       });
   }
 
@@ -37,7 +40,9 @@ export class ShipIndexComponent implements OnInit {
   }
 
   onSubmit(){
-
+      this.query = this.searchForm.value;
+      this.searchResult = this._shipService.getShip(this.query);
+      this.router.navigate([`/pokemon/${this.query}`]);
   }
 
 }
