@@ -30,7 +30,7 @@
             <mat-header-cell *matHeaderCellDef>Details</mat-header-cell>
             <mat-cell *matCellDef="let pokemon;">{{pokemon.details}}
                 <i class button="material-icons" routerLink="/pokemon/detail/{{pokemon.query}}"></i>
-                <button mat-raised-button color="accent" routerLink="/pokemon/{{pokemon.details}}">Details</button>
+                <button mat-raised-button color="accent" routerLink="/pokemon/detail/{{pokemon.details}}">Details</button>
             </mat-cell>
         </ng-container>
 </mat-table>
