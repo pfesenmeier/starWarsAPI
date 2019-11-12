@@ -27,8 +27,8 @@
 
         <ng-container matColumnDef="Details">
             <mat-header-cell *matHeaderCellDef>Details</mat-header-cell>
-            <mat-cell *matCellDef="let pokemon;">
-                <i class="material-icons" routerLink="/pokemon/1">Details</i>
+            <mat-cell *matCellDef="let pokemon;">{{pokemon.details}}
+                <i class="material-icons" routerLink="/api/pokemon">Details</i>
             </mat-cell>
         </ng-container>
 
