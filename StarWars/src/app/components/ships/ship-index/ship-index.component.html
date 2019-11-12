@@ -1,1 +1,14 @@
-<p>ship-index works!</p>
+<!--text box-->
+<!-- submit button -->
+ <!---->
+<form (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Search" formControlName="Search">
+        </mat-form-field>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Search</button>
+</form>
+
+<!-- table -->
+
