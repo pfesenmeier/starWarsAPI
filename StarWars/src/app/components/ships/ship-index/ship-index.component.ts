@@ -40,8 +40,9 @@ export class ShipIndexComponent implements OnInit {
   }
 
   onSubmit(){
-      this.query = this.searchForm.value;
-      this.searchResult = this._shipService.getShip(this.query);
+      this.query = this.searchForm.value.Search;
+      console.log(this.query);
+      //this.searchResult = this._shipService.getShip(this.query);
       this.router.navigate([`/pokemon/${this.query}`]);
   }
 
