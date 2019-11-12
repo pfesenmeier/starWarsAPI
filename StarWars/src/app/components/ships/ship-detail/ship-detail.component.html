@@ -1,11 +1,9 @@
-<h1>Details</h1>
-<hr />
 <div class= body1>
 
 <div *ngIf="pokemon" class= pokedex>
     <div>
         <label>Id: </label>
-        <span>{{pokemon.id}}</span>
+        <span>{{pokemon.id}}            <img style="z-index: 3; width: 100px;" src="{{pokemon.sprites.front_default}}"></span>
     </div>
     <div>
         <label>Name: </label>
@@ -13,11 +11,14 @@
     </div>
     <div>
         <label>Type: </label>
-        <span>{{pokemon.type}}</span>
+        <span> {{pokemon.types[0].type.name}}</span>
     </div>
-    <div>
+    <div style="width: 500px;">
             <label>Move: </label>
-            <span>{{pokemon.move}}</span>
+            <span> {{pokemon.moves[0].move.name}}, {{pokemon.moves[1].move.name}}, {{pokemon.moves[2].move.name}}, {{pokemon.moves[3].move.name}}</span>
         </div>
+
+
+        
 </div>
 </div>
