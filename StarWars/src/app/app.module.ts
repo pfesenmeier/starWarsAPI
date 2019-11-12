@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ShipDetailComponent } from './components/ships/ship-detail/ship-detail.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ShipIndexComponent } from './components/ships/ship-index/ship-index.component';
 
 const routes = [
   { path: 'pokemon', component: ShipDetailComponent},
@@ -14,7 +15,8 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ShipDetailComponent
+    ShipDetailComponent,
+    ShipIndexComponent
   ],
   imports: [
     BrowserModule,
