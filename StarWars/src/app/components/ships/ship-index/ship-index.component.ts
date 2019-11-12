@@ -17,7 +17,7 @@ export class ShipIndexComponent implements OnInit {
     
   columnNames = ['sprite','name','moreInfo']
 
-  dataSource: MatTableDataSource<Pokemon>
+  dataSource: MatTableDataSource<Pokemon>;
 
   constructor(private form: FormBuilder, private _shipService: ShipService, private router: Router) {
       this.createForm();
