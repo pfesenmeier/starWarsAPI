@@ -17,6 +17,9 @@ export class ShipIndexComponent implements OnInit {
     
   columnNames = ['Name','Details']
  
+  query: any;
+  searchResult: any;
+
   dataSource: MatTableDataSource<Pokemon>;
 
   constructor(private form: FormBuilder, private _shipService: ShipService, private router: Router) {
@@ -37,7 +40,9 @@ export class ShipIndexComponent implements OnInit {
   }
 
   onSubmit(){
-
+      this.query = this.searchForm.value;
+      this.searchResult = this._shipService.getShip(this.query);
+      this.router.navigate([`/pokemon/${this.query}`]);
   }
 
 }

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { MatToolbarModule } from '@angular/material';
+
 import { AppComponent } from './app.component';
 import { ShipDetailComponent } from './components/ships/ship-detail/ship-detail.component';
 import { RouterModule } from '@angular/router';
@@ -16,9 +18,8 @@ import { MatTableModule,
  } from '@angular/material';
 import { ShipService } from './services/ship.service';
 
-
 const routes = [
-  { path: 'pokemon', component: ShipDetailComponent},
+  { path: 'pokemon/:query', component: ShipDetailComponent},
   { path: '**', component: ShipIndexComponent }
 ]
 
@@ -31,6 +32,7 @@ const routes = [
   ],
   imports: [
     BrowserModule,
+    MatToolbarModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     MatInputModule,
