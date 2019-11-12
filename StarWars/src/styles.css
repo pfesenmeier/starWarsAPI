@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.body1 {
+    background-image: url(/StarWars/src/app/components/ships/assets/8621.jpg);
+    background-size: cover;
+}
+body {
+    color: white;
+    background-color: black;
+    font-size: 3em;
+    
+}
+h1 {
+    background-color: black;
+}
