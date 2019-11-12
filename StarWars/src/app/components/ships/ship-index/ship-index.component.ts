@@ -15,7 +15,7 @@ export class ShipIndexComponent implements OnInit {
 
   private searchForm: FormGroup;
     
-  columnNames = ['sprite','name','moreInfo']
+  columnNames = ['Name','Details']
 
   dataSource: MatTableDataSource<Pokemon>;
 
@@ -41,3 +41,6 @@ export class ShipIndexComponent implements OnInit {
   }
 
 }
+
+
+

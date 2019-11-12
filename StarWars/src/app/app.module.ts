@@ -16,6 +16,7 @@ import { MatTableModule,
  } from '@angular/material';
 import { ShipService } from './services/ship.service';
 
+
 const routes = [
   { path: 'pokemon', component: ShipDetailComponent},
   { path: '**', component: ShipIndexComponent }
@@ -25,7 +26,8 @@ const routes = [
   declarations: [
     AppComponent,
     ShipDetailComponent,
-    ShipIndexComponent
+    ShipIndexComponent,
+    
   ],
   imports: [
     BrowserModule,
