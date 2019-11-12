@@ -1,8 +1,38 @@
-<p>ship-index works!</p>
+<!--text box-->
+<!-- submit button -->
+ <!---->
+<form (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Search" formControlName="Search">
+        </mat-form-field>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Search</button>
+</form>
 
-<div class="md-form">
-    <input type="search" [(ngModel)]="searchText" placeholder="Search text">
-  </div>
-  <ul *ngFor="let data of dataset | filter: searchText">
-    <li>{{data}}</li>
-  </ul>
+<!-- table -->
+
+<h1> Pokedex </h1>
+<hr />
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames"></mat-row>
+
+        <ng-container matColumnDef="Name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let pokemon;">{{pokemon.name}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Details">
+            <mat-header-cell *matHeaderCellDef>Details</mat-header-cell>
+            <mat-cell *matCellDef="let pokemon;">
+                <i class="material-icons" routerLink="/pokemon/detail/">library_books</i>
+            </mat-cell>
+        </ng-container>
+
+    
+</mat-table>
+</div>
+
