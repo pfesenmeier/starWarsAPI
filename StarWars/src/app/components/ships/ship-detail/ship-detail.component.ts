@@ -16,8 +16,8 @@ export class ShipDetailComponent implements OnInit {
 
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routeData => {
-      console.log(routeData);
-      this.pokemonService.getShip('zubat').subscribe((pokemon: Pokemon) => {
+      console.log(routeData.get('query'));
+      this.pokemonService.getShip(routeData.get('query')).subscribe((pokemon: Pokemon) => {
         this.pokemon = pokemon;
       console.log(pokemon);
       })
