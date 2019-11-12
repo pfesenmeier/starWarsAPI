@@ -29,11 +29,11 @@
         <ng-container matColumnDef="Details">
             <mat-header-cell *matHeaderCellDef>Details</mat-header-cell>
             <mat-cell *matCellDef="let pokemon;">{{pokemon.details}}
-                <i class="material-icons" routerLink="/api/pokemon">Details</i>
+                <i class button="material-icons" routerLink="/pokemon/detail/{{pokemon.query}}"></i>
+                <button mat-raised-button color="accent" routerLink="/pokemon/{{pokemon.details}}">Details</button>
             </mat-cell>
         </ng-container>
-
-    
 </mat-table>
+    
 </div>
 
