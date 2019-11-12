@@ -1,16 +1,39 @@
 
+<!--text box-->
+<!-- submit button -->
+ <!---->
+<form (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Search" formControlName="Search">
+        </mat-form-field>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Search</button>
+</form>
 
+<!-- table -->
 
+<h1> Pokedex </h1>
+<hr />
 
-<div class= body>
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames"></mat-row>
 
+        <ng-container matColumnDef="Name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let pokemon;">{{pokemon.name}}</mat-cell>
+        </ng-container>
 
-<p class= p >So you Want to be a Master of Pokemon?</p>
-
-
-</div>
-
-<formbox>
+        <ng-container matColumnDef="Details">
+            <mat-header-cell *matHeaderCellDef>Details</mat-header-cell>
+            <mat-cell *matCellDef="let pokemon;">{{pokemon.details}}
+                <i class="material-icons" routerLink="/api/pokemon">Details</i>
+            </mat-cell>
+        </ng-container>
 
     
-</formbox>
+</mat-table>
+</div>
+
