@@ -18,6 +18,10 @@ export class ShipService {
     return this.http.get(`${Api_Url}/pokemon/${query}`);
   }
 
+  //searchShip(){
+   // return this.
+ // }
+
   
 
 
