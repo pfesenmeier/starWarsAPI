@@ -7,10 +7,13 @@
 .body1 {
     background-image: url(../assets/Pokedex.png);
     background-size: cover;
+    height: 800px;
+    width: 1200px;
+    color: black;
 }
 
 .pokedex {
-    position: fixed;
-    top: 260px;
+    position: relative;
+    top: 215px;
     left: 50px;
 }
